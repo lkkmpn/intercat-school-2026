@@ -9,7 +9,7 @@ authors = [
 requires-python = ">=3.11"
 dependencies = [
     "ase>=3.29.0",
-    "ipykernel>=6.17.4",
+    "ipykernel>=6.17.1",
     "ipywidgets>=7.7.1",
     "matplotlib>=3.10.0",
     "numpy>=2.1.3",
