@@ -29,6 +29,7 @@ ml-methods = [
 [dependency-groups]
 internal = [
     "fairchem-core",
+    "jupyterlab>=4.6.4",
     "torch<2.11",
 ]
 
