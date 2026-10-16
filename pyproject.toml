@@ -9,10 +9,10 @@ authors = [
 requires-python = ">=3.11"
 dependencies = [
     "ase>=3.29.0",
-    "ipykernel>=7.4.0",
-    "ipywidgets>=8.1.9",
-    "matplotlib>=3.11.2",
-    "numpy>=2.4.6",
+    "ipykernel>=6.17.4",
+    "ipywidgets>=7.7.1",
+    "matplotlib>=3.10.0",
+    "numpy>=2.1.3",
 ]
 
 [project.optional-dependencies]
@@ -20,10 +20,10 @@ ml-methods = [
     "colorspacious>=1.1.2",
     "dscribe>=2.1.2",
     "matplotlib-plus-plus>=0.0.1",
-    "scikit-learn>=1.9.1",
-    "scipy>=1.17.1",
+    "scikit-learn>=1.6.1",
+    "scipy>=1.16.3",
     "torch>=2.8.0",
-    "tqdm>=4.70.1",
+    "tqdm>=4.67.3",
 ]
 
 [dependency-groups]
