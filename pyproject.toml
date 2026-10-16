@@ -12,6 +12,7 @@ dependencies = [
     "ipykernel>=7.4.0",
     "ipywidgets>=8.1.9",
     "matplotlib>=3.11.2",
+    "numpy>=2.4.6",
 ]
 
 [project.optional-dependencies]
@@ -19,7 +20,6 @@ ml-methods = [
     "colorspacious>=1.1.2",
     "dscribe>=2.1.2",
     "matplotlib-plus-plus>=0.0.1",
-    "numpy>=2.4.6",
     "scikit-learn>=1.9.1",
     "scipy>=1.17.1",
     "torch>=2.8.0",

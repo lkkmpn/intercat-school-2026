@@ -1490,6 +1490,7 @@ dependencies = [
     { name = "ipykernel" },
     { name = "ipywidgets" },
     { name = "matplotlib" },
+    { name = "numpy" },
 ]
 
 [package.optional-dependencies]
@@ -1497,7 +1498,6 @@ ml-methods = [
     { name = "colorspacious" },
     { name = "dscribe" },
     { name = "matplotlib-plus-plus" },
-    { name = "numpy" },
     { name = "scikit-learn" },
     { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
     { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
@@ -1520,7 +1520,7 @@ requires-dist = [
     { name = "ipywidgets", specifier = ">=8.1.9" },
     { name = "matplotlib", specifier = ">=3.11.2" },
     { name = "matplotlib-plus-plus", marker = "extra == 'ml-methods'", git = "https://gitlab.com/lkkmpn/mplpp.git" },
-    { name = "numpy", marker = "extra == 'ml-methods'", specifier = ">=2.4.6" },
+    { name = "numpy", specifier = ">=2.4.6" },
     { name = "scikit-learn", marker = "extra == 'ml-methods'", specifier = ">=1.9.1" },
     { name = "scipy", marker = "extra == 'ml-methods'", specifier = ">=1.17.1" },
     { name = "torch", marker = "extra == 'ml-methods'", specifier = ">=2.8.0" },
