@@ -2,7 +2,6 @@ import io
 import itertools
 from dataclasses import dataclass
 from functools import cache
-from pathlib import Path
 
 import ipywidgets
 import matplotlib
@@ -30,7 +29,7 @@ from ics26.ml_methods.plot_atoms import _plot_atoms
 
 @cache
 def _get_span() -> tuple[float, float]:
-    atoms = read(Path(__file__).parent.parent.parent.parent / 'files/gold_stepped.traj')
+    atoms = read('gold_stepped.traj')
     limits = get_atoms_limits(atoms, plane='xy', radius_factor=1.0)
     limits.add_margin(0.25)
     span = max(limits.get_width(), limits.get_height())
