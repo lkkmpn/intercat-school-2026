@@ -37,6 +37,8 @@ PACKAGES = [
     Package('scipy', 'scipy', '1.16.3'),
     Package('torch', 'torch', '2.8.0'),
     Package('tqdm', 'tqdm', '4.67.3'),
+    Package('mace-torch', 'mace', '0.3.16'),
+    Package('sella', 'sella', '2.6.0'),
 ]
 
 
@@ -105,6 +107,16 @@ def check_torch() -> None:
     (x @ x).sum().backward()
 
 
+def check_sella():
+    from ase.build import molecule
+    from ase.calculators.emt import EMT
+    from sella import Sella
+
+    atoms = molecule('H2O')
+    atoms.calc = EMT()
+    Sella(atoms, order=0, internal=True, logfile=None).run(fmax=0.05, steps=100)
+
+
 def check_gfortran() -> None:
     exe = shutil.which('gfortran')
     if exe is None:
@@ -151,6 +163,7 @@ CHECKS = [
     Check('dscribe run', check_dscribe),
     Check('sklearn run', check_sklearn),
     Check('torch run', check_torch),
+    Check('sella run', check_sella),
     Check('gfortran', check_gfortran),
     Check('make', check_make),
     Check('curl', lambda: check_tool('curl')),

@@ -25,7 +25,13 @@ ml-methods = [
     "torch>=2.8.0",
     "tqdm>=4.67.3",
 ]
-all = ["ics26[ml-methods]"]
+modeling = [
+    "mace-torch>=0.3.16",
+    "scipy>=1.16.3",
+    "sella>=2.6.0",
+    "torch>=2.8.0",
+]
+all = ["ics26[ml-methods,modeling]"]
 
 [dependency-groups]
 internal = [
@@ -37,6 +43,14 @@ internal = [
 [build-system]
 requires = ["uv_build>=0.12.0,<0.14.0"]
 build-backend = "uv_build"
+
+[tool.uv]
+conflicts = [
+    [
+        { extra = "modeling" },
+        { group = "internal" },
+    ]
+]
 
 [tool.uv.sources]
 matplotlib-plus-plus = { git = "https://gitlab.com/lkkmpn/mplpp.git" }
