@@ -2,27 +2,40 @@ version = 1
 revision = 5
 requires-python = ">=3.11"
 resolution-markers = [
-    "python_full_version >= '3.14' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.11.5' and python_full_version < '3.12' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version < '3.11.5' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.13.*' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version >= '3.12' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version >= '3.11.5' and python_full_version < '3.12' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
-    "python_full_version < '3.11.5' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version < '3.12' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
 ]
 conflicts = [[
     { package = "ics26", extra = "modeling" },
+    { package = "ics26", group = "internal" },
+], [
+    { package = "ics26", extra = "all" },
     { package = "ics26", group = "internal" },
 ]]
 
@@ -354,8 +367,8 @@ source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "matplotlib" },
     { name = "numpy" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/aa/36/cfe17324ea701d2caa479f25b134c54aeb36998443fd88c13e4f1af06f52/ase-3.29.0.tar.gz", hash = "sha256:ef4e2caa38169e3fbbc4164764a060d1877a6692519a4bed82521328eeb0d9aa", size = 2466051, upload-time = "2026-06-21T16:03:06.499Z" }
@@ -421,8 +434,8 @@ name = "beautifulsoup4"
 version = "4.15.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "soupsieve", version = "2.10", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.11.5' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "soupsieve", version = "3.0.3", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.11.5' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "soupsieve", version = "2.10", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.11.5' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "soupsieve", version = "3.0.3", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.11.5' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "typing-extensions" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/43/65/318323f98dbee45d42dff61d8f047181bc6f2268a9068cfad035a46be5af/beautifulsoup4-4.15.0.tar.gz", hash = "sha256:288e3ca7d54b06f2ac191970bc275c1939cb46d450b255bf6718b04aa37ab4f7", size = 632571, upload-time = "2026-06-07T16:44:20.453Z" }
@@ -461,7 +474,7 @@ name = "cffi"
 version = "2.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "pycparser", marker = "implementation_name != 'PyPy' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "pycparser", marker = "implementation_name != 'PyPy' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/9e/ef/008a1939e372c06329a3fce4279c02f328488f3526744906eeec3da7ad5f/cffi-2.1.1.tar.gz", hash = "sha256:dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be", size = 530807, upload-time = "2026-08-03T21:21:18.939Z" }
 wheels = [
@@ -787,15 +800,17 @@ name = "contourpy"
 version = "1.3.3"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
-    "python_full_version >= '3.11.5' and python_full_version < '3.12' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
-    "python_full_version < '3.11.5' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.11.5' and python_full_version < '3.12' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version < '3.11.5' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version < '3.12' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
 ]
 dependencies = [
-    { name = "numpy", marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "numpy", marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/58/01/1253e6698a07380cd31a736d248a3f2a50a7c88779a1813da27503cadc2a/contourpy-1.3.3.tar.gz", hash = "sha256:083e12155b210502d0bca491432bb04d56dc3432f95a979b429f2848c3dbe880", size = 13466174, upload-time = "2025-07-26T12:03:12.549Z" }
 wheels = [
@@ -877,21 +892,29 @@ name = "contourpy"
 version = "1.4.0"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
-    "python_full_version >= '3.14' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.13.*' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version >= '3.12' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
 ]
 dependencies = [
-    { name = "numpy", marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "numpy", marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/83/5a/a55177dd22553a277388e8a1b3220e92de91bacb28356cdc73caa240121d/contourpy-1.4.0.tar.gz", hash = "sha256:20156f5a1ac4f8ce02656e39a61e82164a3d359796dc8026f75b062783d500e1", size = 13323726, upload-time = "2026-09-11T19:05:05.808Z" }
 wheels = [
@@ -1100,8 +1123,8 @@ dependencies = [
     { name = "joblib" },
     { name = "numpy" },
     { name = "scikit-learn" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "sparse" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/43/85/5691bb1f0fb2a50211d96a30ac219a921a72645c6c712109a8a7e75ab7f6/dscribe-2.1.2.tar.gz", hash = "sha256:5cbc88f1be444c7590e315868a4e7ea88e11cee4311575f8e1d26bb834d43c97", size = 1194446, upload-time = "2025-09-27T17:13:20.219Z" }
@@ -1147,10 +1170,10 @@ resolution-markers = [
     "python_full_version >= '3.14' and sys_platform == 'emscripten'",
     "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
     "python_full_version == '3.13.*' and sys_platform == 'win32'",
-    "python_full_version == '3.13.*' and sys_platform == 'emscripten'",
-    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
     "python_full_version == '3.12.*' and sys_platform == 'win32'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten'",
     "python_full_version == '3.12.*' and sys_platform == 'emscripten'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
     "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
     "python_full_version < '3.12' and sys_platform == 'win32'",
     "python_full_version < '3.12' and sys_platform == 'emscripten'",
@@ -1158,8 +1181,8 @@ resolution-markers = [
 ]
 dependencies = [
     { name = "opt-einsum-fx" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-all') or (python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version < '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-all') or (python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version >= '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "sympy" },
     { name = "torch" },
 ]
@@ -1180,8 +1203,8 @@ resolution-markers = [
 ]
 dependencies = [
     { name = "opt-einsum-fx" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "sympy" },
     { name = "torch" },
 ]
@@ -1218,8 +1241,8 @@ dependencies = [
     { name = "pyyaml" },
     { name = "ray", extra = ["serve"], marker = "extra == 'group-5-ics26-internal'" },
     { name = "requests" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "setuptools" },
     { name = "submitit" },
     { name = "torch" },
@@ -1827,10 +1850,12 @@ dependencies = [
 all = [
     { name = "colorspacious" },
     { name = "dscribe" },
+    { name = "mace-torch" },
     { name = "matplotlib-plus-plus" },
     { name = "scikit-learn" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-all') or (python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version < '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-all') or (python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version >= '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "sella" },
     { name = "torch" },
     { name = "tqdm" },
 ]
@@ -1839,16 +1864,17 @@ ml-methods = [
     { name = "dscribe" },
     { name = "matplotlib-plus-plus" },
     { name = "scikit-learn" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "torch" },
     { name = "tqdm" },
 ]
 modeling = [
     { name = "mace-torch" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version >= '3.12' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (extra != 'extra-5-ics26-all' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version < '3.12' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra != 'extra-5-ics26-all' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "sella" },
+    { name = "torch" },
 ]
 
 [package.dev-dependencies]
@@ -1863,7 +1889,7 @@ requires-dist = [
     { name = "ase", specifier = ">=3.29.0" },
     { name = "colorspacious", marker = "extra == 'ml-methods'", specifier = ">=1.1.2" },
     { name = "dscribe", marker = "extra == 'ml-methods'", specifier = ">=2.1.2" },
-    { name = "ics26", extras = ["ml-methods"], marker = "extra == 'all'" },
+    { name = "ics26", extras = ["ml-methods", "modeling"], marker = "extra == 'all'" },
     { name = "ipykernel", specifier = ">=6.17.1" },
     { name = "ipywidgets", specifier = ">=7.7.1" },
     { name = "mace-torch", marker = "extra == 'modeling'", specifier = ">=0.3.16" },
@@ -1872,12 +1898,13 @@ requires-dist = [
     { name = "numpy", specifier = ">=2.1.3" },
     { name = "scikit-learn", marker = "extra == 'ml-methods'", specifier = ">=1.6.1" },
     { name = "scipy", marker = "extra == 'ml-methods'", specifier = ">=1.16.3" },
-    { name = "scipy", marker = "extra == 'modeling'", specifier = ">=1.17.1" },
+    { name = "scipy", marker = "extra == 'modeling'", specifier = ">=1.16.3" },
     { name = "sella", marker = "extra == 'modeling'", specifier = ">=2.6.0" },
     { name = "torch", marker = "extra == 'ml-methods'", specifier = ">=2.8.0" },
+    { name = "torch", marker = "extra == 'modeling'", specifier = ">=2.8.0" },
     { name = "tqdm", marker = "extra == 'ml-methods'", specifier = ">=4.67.3" },
 ]
-provides-extras = ["ml-methods", "all", "modeling"]
+provides-extras = ["ml-methods", "modeling", "all"]
 
 [package.metadata.requires-dev]
 internal = [
@@ -1900,7 +1927,7 @@ name = "ipykernel"
 version = "7.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "appnope", marker = "sys_platform == 'darwin' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "appnope", marker = "sys_platform == 'darwin' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "comm" },
     { name = "debugpy" },
     { name = "ipython" },
@@ -1923,17 +1950,17 @@ name = "ipython"
 version = "9.17.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "sys_platform == 'win32' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "colorama", marker = "sys_platform == 'win32' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "ipython-pygments-lexers" },
     { name = "jedi" },
     { name = "matplotlib-inline" },
-    { name = "pexpect", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32') or (sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "pexpect", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32') or (sys_platform == 'emscripten' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "prompt-toolkit" },
-    { name = "psutil", marker = "(sys_platform != 'cygwin' and sys_platform != 'emscripten') or (sys_platform == 'cygwin' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "psutil", marker = "(sys_platform != 'cygwin' and sys_platform != 'emscripten') or (sys_platform == 'cygwin' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform == 'cygwin' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "pygments" },
     { name = "stack-data" },
     { name = "traitlets" },
-    { name = "typing-extensions", marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "typing-extensions", marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/b9/32/99451b1283ec5d92ad77073f12e1c667dc10775384d8f15c2914207149dd/ipython-9.17.1.tar.gz", hash = "sha256:8919be8c27f20a6f4423145028063f6637b42a03ce57665bb12015ee1f073529", size = 4539289, upload-time = "2026-09-01T08:29:32.6Z" }
 wheels = [
@@ -2010,10 +2037,10 @@ resolution-markers = [
     "python_full_version >= '3.14' and sys_platform == 'emscripten'",
     "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
     "python_full_version == '3.13.*' and sys_platform == 'win32'",
-    "python_full_version == '3.13.*' and sys_platform == 'emscripten'",
-    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
     "python_full_version == '3.12.*' and sys_platform == 'win32'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten'",
     "python_full_version == '3.12.*' and sys_platform == 'emscripten'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
     "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
 ]
 dependencies = [
@@ -2076,10 +2103,10 @@ resolution-markers = [
     "python_full_version >= '3.14' and sys_platform == 'emscripten'",
     "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
     "python_full_version == '3.13.*' and sys_platform == 'win32'",
-    "python_full_version == '3.13.*' and sys_platform == 'emscripten'",
-    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
     "python_full_version == '3.12.*' and sys_platform == 'win32'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten'",
     "python_full_version == '3.12.*' and sys_platform == 'emscripten'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
     "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
 ]
 dependencies = [
@@ -2774,8 +2801,8 @@ name = "matplotlib"
 version = "3.11.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "contourpy", version = "1.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "contourpy", version = "1.4.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "contourpy", version = "1.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "contourpy", version = "1.4.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "cycler" },
     { name = "fonttools" },
     { name = "kiwisolver" },
@@ -2862,8 +2889,8 @@ dependencies = [
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "scikit-learn" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 
 [[package]]
@@ -2874,8 +2901,8 @@ dependencies = [
     { name = "ase" },
     { name = "numpy" },
     { name = "packaging" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-all') or (python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version < '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-all') or (python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version >= '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e7/dd/4088a5e52e91c81a94fa7d92b03cfb75803371ccfe3283e128b33c74a992/matscipy-1.3.1.tar.gz", hash = "sha256:b66296fff34d63f36bbc5c23e307808c8060202016e779bf2d3fa762d8050258", size = 10465366, upload-time = "2026-10-13T13:49:19.662Z" }
 wheels = [
@@ -3464,12 +3491,14 @@ name = "networkx"
 version = "3.6.1"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
-    "python_full_version >= '3.11.5' and python_full_version < '3.12' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
-    "python_full_version < '3.11.5' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.11.5' and python_full_version < '3.12' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version < '3.11.5' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version < '3.12' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/6a/51/63fe664f3908c97be9d2e4f1158eb633317598cfa6e1fc14af5383f17512/networkx-3.6.1.tar.gz", hash = "sha256:26b7c357accc0c8cde558ad486283728b65b6a95d85ee1cd66bafab4c8168509", size = 2517025, upload-time = "2025-12-08T17:02:39.908Z" }
 wheels = [
@@ -3481,18 +3510,26 @@ name = "networkx"
 version = "3.7"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
-    "python_full_version >= '3.14' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.13.*' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version >= '3.12' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/dc/76/3af777226b63a5e64a6b36b1ec5855c14e2b94a37096d4760e595fc43511/networkx-3.7.tar.gz", hash = "sha256:fd77a511bd90f39f3d016351345b52cf5319b813bdca01de3f755d3cca62e96a", size = 1866482, upload-time = "2026-09-21T16:45:16.974Z" }
 wheels = [
@@ -3674,7 +3711,7 @@ name = "nvidia-cudnn-cu12"
 version = "9.10.2.21"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32') or (sys_platform == 'emscripten' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling') or (sys_platform == 'win32' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra != 'extra-5-ics26-modeling')" },
+    { name = "nvidia-cublas-cu12" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fa/41/e79269ce215c857c935fd86bcfe91a451a584dfc27f1e068f568b9ad1ab7/nvidia_cudnn_cu12-9.10.2.21-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:c9132cc3f8958447b4910a1720036d9eff5928cc3179b0a51fb6d167c6cc87d8", size = 705026878, upload-time = "2025-06-06T21:52:51.348Z" },
@@ -3687,7 +3724,7 @@ name = "nvidia-cufft-cu12"
 version = "11.3.3.83"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-nvjitlink-cu12", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32') or (sys_platform == 'emscripten' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling') or (sys_platform == 'win32' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra != 'extra-5-ics26-modeling')" },
+    { name = "nvidia-nvjitlink-cu12" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/60/bc/7771846d3a0272026c416fbb7e5f4c1f146d6d80704534d0b187dd6f4800/nvidia_cufft_cu12-11.3.3.83-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:848ef7224d6305cdb2a4df928759dca7b1201874787083b6e7550dd6765ce69a", size = 193109211, upload-time = "2025-03-07T01:44:56.873Z" },
@@ -3719,9 +3756,9 @@ name = "nvidia-cusolver-cu12"
 version = "11.7.3.90"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-cublas-cu12", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32') or (sys_platform == 'emscripten' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling') or (sys_platform == 'win32' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra != 'extra-5-ics26-modeling')" },
-    { name = "nvidia-cusparse-cu12", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32') or (sys_platform == 'emscripten' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling') or (sys_platform == 'win32' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra != 'extra-5-ics26-modeling')" },
-    { name = "nvidia-nvjitlink-cu12", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32') or (sys_platform == 'emscripten' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling') or (sys_platform == 'win32' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra != 'extra-5-ics26-modeling')" },
+    { name = "nvidia-cublas-cu12" },
+    { name = "nvidia-cusparse-cu12" },
+    { name = "nvidia-nvjitlink-cu12" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c8/32/f7cd6ce8a7690544d084ea21c26e910a97e077c9b7f07bf5de623ee19981/nvidia_cusolver_cu12-11.7.3.90-py3-none-manylinux_2_27_aarch64.whl", hash = "sha256:db9ed69dbef9715071232caa9b69c52ac7de3a95773c2db65bdba85916e4e5c0", size = 267229841, upload-time = "2025-03-07T01:46:54.356Z" },
@@ -3734,7 +3771,7 @@ name = "nvidia-cusparse-cu12"
 version = "12.5.8.93"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "nvidia-nvjitlink-cu12", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32') or (sys_platform == 'emscripten' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling') or (sys_platform == 'win32' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra != 'extra-5-ics26-modeling')" },
+    { name = "nvidia-nvjitlink-cu12" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/bc/f7/cd777c4109681367721b00a106f491e0d0d15cfa1fd59672ce580ce42a97/nvidia_cusparse_cu12-12.5.8.93-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:9b6c161cb130be1a07a27ea6923df8141f3c295852f4b260c65f18f3e0a091dc", size = 288117129, upload-time = "2025-03-07T01:47:40.407Z" },
@@ -4135,7 +4172,7 @@ name = "pexpect"
 version = "4.9.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "ptyprocess", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32') or (sys_platform == 'emscripten' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling') or (sys_platform == 'win32' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra != 'extra-5-ics26-modeling')" },
+    { name = "ptyprocess" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/42/92/cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149d/pexpect-4.9.0.tar.gz", hash = "sha256:ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f", size = 166450, upload-time = "2023-11-25T09:07:26.339Z" }
 wheels = [
@@ -4865,7 +4902,7 @@ name = "pyzmq"
 version = "27.2.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "cffi", marker = "implementation_name == 'pypy' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "cffi", marker = "implementation_name == 'pypy' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/e7/8d/5b3d5631c2f4b4b8862f64cd0c9eb777b5710eeb5125b4be8dd0a200a4c0/pyzmq-27.2.0.tar.gz", hash = "sha256:54d4259d1bfae24ecdb5ca79f7acc2eac6c286a02d6a0ae617797cb45f0726d3", size = 292316, upload-time = "2026-08-20T19:08:21.19Z" }
 wheels = [
@@ -5205,8 +5242,8 @@ dependencies = [
     { name = "joblib" },
     { name = "narwhals" },
     { name = "numpy" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "threadpoolctl" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/d2/eb/eaf5e07fcc0da7149b0e084f24e54edd7441b9a89ce7e034032ae97fe3a0/scikit_learn-1.9.1.tar.gz", hash = "sha256:629cada3e33e2b9bf376cdc7614a47a4140b8aedc1d836579e359736fbd82977", size = 7786908, upload-time = "2026-09-10T18:34:04.679Z" }
@@ -5260,15 +5297,17 @@ name = "scipy"
 version = "1.17.1"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
-    "python_full_version >= '3.11.5' and python_full_version < '3.12' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
-    "python_full_version < '3.11.5' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.11.5' and python_full_version < '3.12' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version < '3.11.5' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version < '3.12' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version < '3.12' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version < '3.12' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
 ]
 dependencies = [
-    { name = "numpy", marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "numpy", marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/7a/97/5a3609c4f8d58b039179648e62dd220f89864f56f7357f5d4f45c29eb2cc/scipy-1.17.1.tar.gz", hash = "sha256:95d8e012d8cb8816c226aef832200b1d45109ed4464303e997c5b13122b297c0", size = 30573822, upload-time = "2026-02-23T00:26:24.851Z" }
 wheels = [
@@ -5339,21 +5378,29 @@ name = "scipy"
 version = "1.18.1"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
-    "python_full_version >= '3.14' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
+    "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.13.*' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform == 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform == 'emscripten' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
     "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra == 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
-    "python_full_version >= '3.12' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform == 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.13.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
+    "python_full_version == '3.12.*' and sys_platform != 'emscripten' and sys_platform != 'win32' and extra != 'extra-5-ics26-modeling' and extra != 'group-5-ics26-internal'",
 ]
 dependencies = [
-    { name = "numpy", marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "numpy", marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/7e/74/66de6258867beb2ef08f35f9f2ac017a52cacd5081714d239ff1a442d458/scipy-1.18.1.tar.gz", hash = "sha256:52c4b7422442aba924d03ad4019852b08a92e64ea187b933135687bfe2747307", size = 30781235, upload-time = "2026-08-21T23:28:50.599Z" }
 wheels = [
@@ -5425,13 +5472,13 @@ version = "2.6.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ase" },
-    { name = "jax", version = "0.10.2", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "jax", version = "0.12.0.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "jaxlib", version = "0.10.2", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "jaxlib", version = "0.12.0.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "jax", version = "0.10.2", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-all') or (python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version < '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "jax", version = "0.12.0.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-all') or (python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version >= '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "jaxlib", version = "0.10.2", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-all') or (python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version < '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "jaxlib", version = "0.12.0.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-all') or (python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version >= '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "numpy" },
-    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-all') or (python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version < '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-all') or (python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version >= '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/d5/e8/4ee9960010ca9156ed794efe249ba071d161411c59e61aa7378ebe11d292/sella-2.6.0.tar.gz", hash = "sha256:7effc2a10f6d43c0bbdff11acb1fe36e16424cd9f01746660e87985662713384", size = 182652, upload-time = "2026-09-02T23:09:22.216Z" }
 wheels = [
@@ -5659,25 +5706,25 @@ dependencies = [
     { name = "filelock" },
     { name = "fsspec" },
     { name = "jinja2" },
-    { name = "networkx", version = "3.6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "networkx", version = "3.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-cublas-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-cuda-cupti-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-cuda-nvrtc-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-cuda-runtime-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-cudnn-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-cufft-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-cufile-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-curand-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-cusolver-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-cusparse-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-cusparselt-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-nccl-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "nvidia-nvtx-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
-    { name = "setuptools", marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "networkx", version = "3.6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "networkx", version = "3.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-cublas-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-cuda-cupti-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-cuda-nvrtc-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-cuda-runtime-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-cudnn-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-cufft-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-cufile-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-curand-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-cusolver-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-cusparse-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-cusparselt-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-nccl-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-nvjitlink-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "nvidia-nvtx-cu12", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "setuptools", marker = "python_full_version >= '3.12' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "sympy" },
-    { name = "triton", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "triton", marker = "(platform_machine == 'x86_64' and sys_platform == 'linux') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (platform_machine != 'x86_64' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (sys_platform != 'linux' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "typing-extensions" },
 ]
 wheels = [
@@ -5770,7 +5817,7 @@ name = "tqdm"
 version = "4.70.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "sys_platform == 'win32' or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "colorama", marker = "sys_platform == 'win32' or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/0d/ea/b2a5bd54b28a324dae8211928b2d730b6547500342c7e6c6dea08bd0a485/tqdm-4.70.1.tar.gz", hash = "sha256:cefd0eca11b2a37a3aee776544d4f4ae913f02688135b5556b8788dfa474afc4", size = 171846, upload-time = "2026-09-11T07:25:16.601Z" }
 wheels = [
@@ -5791,7 +5838,7 @@ name = "triton"
 version = "3.4.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "setuptools", marker = "(sys_platform != 'emscripten' and sys_platform != 'win32') or (sys_platform == 'emscripten' and extra == 'group-5-ics26-internal') or (sys_platform == 'emscripten' and extra != 'extra-5-ics26-modeling') or (sys_platform == 'win32' and extra == 'group-5-ics26-internal') or (sys_platform == 'win32' and extra != 'extra-5-ics26-modeling')" },
+    { name = "setuptools" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/7d/39/43325b3b651d50187e591eefa22e236b2981afcebaefd4f2fc0ea99df191/triton-3.4.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:7b70f5e6a41e52e48cfc087436c8a28c17ff98db369447bcaff3b887a3ab4467", size = 155531138, upload-time = "2025-07-30T19:58:29.908Z" },

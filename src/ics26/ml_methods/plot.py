@@ -1,5 +1,6 @@
 import io
 import itertools
+import tarfile
 from dataclasses import dataclass
 from functools import cache
 
@@ -43,6 +44,44 @@ def _get_limits_xy(atoms: Atoms) -> Limits:
 
 def repeat_args(*args):
     return (itertools.repeat(arg) for arg in args)
+
+
+@dataclass
+class PrerenderedSlider:
+    atoms_list: list[Atoms]
+    bufs: list[io.BytesIO]
+
+
+@cache
+def _prerendered_sliders() -> list[PrerenderedSlider]:
+    return [
+        PrerenderedSlider(
+            read('gold_stepped_hydrogen_x_diffusion.traj', index=':'),
+            _prerendered_slider('gold_stepped_hydrogen_x_diffusion.tar.xz'),
+        ),
+        PrerenderedSlider(
+            sorted(read('training_data.traj', index=':'), key=lambda atoms: atoms.get_potential_energy()),
+            _prerendered_slider('training_data.tar.xz'),
+        ),
+    ]
+
+
+def _prerendered_slider(path: str) -> list[io.BytesIO]:
+    with tarfile.open(path, 'r:xz') as tar:
+        members = [m for m in tar.getmembers() if m.isfile() and m.name.endswith('.png')]
+        members.sort(key=lambda m: m.name)
+        return [io.BytesIO(tar.extractfile(m).read()) for m in members]
+
+
+def match_prerendered_slider(atoms_list: list[Atoms]) -> list[io.BytesIO] | None:
+    for prerendered_slider in _prerendered_sliders():
+        if len(atoms_list) == len(prerendered_slider.atoms_list) and all(
+            atoms == prerendered_atoms
+            for atoms, prerendered_atoms in zip(atoms_list, prerendered_slider.atoms_list, strict=True)
+        ):
+            return prerendered_slider.bufs
+
+    return None
 
 
 def plot_atoms(
@@ -145,12 +184,12 @@ def _plot_atoms_slider_figure(atoms: Atoms, width: float, height: float, limits:
     ax.set_title(title, loc='left')
 
     buf = io.BytesIO()
-    fig.savefig(buf, format='png', bbox_inches='tight')
+    fig.savefig(buf, format='png', bbox_inches='tight', pil_kwargs={'compress_level': 0})
 
     return buf
 
 
-def plot_atoms_slider(atoms_list: list[Atoms]):
+def plot_atoms_slider(atoms_list: list[Atoms], sorted_by_energy: bool = False):
     atoms = atoms_list[0]  # assumed that all are same surface
 
     darken_threshold = np.max(atoms.positions[atoms.symbols == 'Au', 2])
@@ -161,7 +200,10 @@ def plot_atoms_slider(atoms_list: list[Atoms]):
     height = 4.0
     width = height * aspect
 
-    bufs = process_map(
+    if sorted_by_energy:
+        atoms_list = sorted(atoms_list, key=lambda atoms: atoms.get_potential_energy())
+
+    bufs = match_prerendered_slider(atoms_list) or process_map(
         _plot_atoms_slider_figure,
         atoms_list,
         *repeat_args(width, height, limits, darken_threshold),
@@ -172,7 +214,9 @@ def plot_atoms_slider(atoms_list: list[Atoms]):
     labels = [atoms.info.get('label') for atoms in atoms_list]
     options = [(f'{i} ({label})' if label else f'{i}', i) for i, label in enumerate(labels)]
 
-    slider = ipywidgets.SelectionSlider(options=options, value=0, description='Image index:')
+    slider = ipywidgets.SelectionSlider(
+        options=options, value=0, description='Image index:', layout=ipywidgets.Layout(width='400px')
+    )
     image = ipywidgets.Image(format='png')
 
     def render(_=None):
@@ -257,50 +301,20 @@ def plot_reduction(reduction: Reduction, transformed_vectors: np.ndarray, labels
     _plot_reduction(ax, reduction, [QuiverBatch(transformed_vectors, {'color': [f'C{i}' for i in range(n)]}, labels)])
 
 
-def _plot_atoms_and_reduction_slider_figure(
+def _plot_reduction_slider_figure(
     atoms: Atoms,
     index: int,
-    width: float,
     height: float,
-    limits: Limits,
-    darken_threshold: float,
     reduction: Reduction,
     transformed_vectors: np.ndarray,
     reference_vectors: np.ndarray,
     reference_labels: list[str],
 ):
-    padding = 0.5  # in
-    fig_width = width + height + padding
-    fig = Figure(figsize=(fig_width, height))
+    fig, ax = plt.subplots(figsize=(height, height))
     FigureCanvasAgg(fig)
 
-    ax_atoms = fig.add_axes([0, 0, width / fig_width, 1])
-
-    _plot_atoms(
-        ax_atoms,
-        atoms,
-        plane='xy',
-        radius_factor=1.0,
-        patch_limits=limits,
-        limits_indices=False,
-        repeat=True,
-        repeat_patch_kwargs={'ls': ':'},
-        darken=True,
-        darken_threshold=darken_threshold,
-        darken_factor=0.2,
-        repeat_desaturate=0.8,
-    )
-
-    plot_cell(ax_atoms, atoms.cell, plane='xy', collection_kwargs={'edgecolors': 'C3'})
-
-    limits.apply_to_axes(ax_atoms)
-
-    ax_atoms.set_title(atoms.info.get('label', '\u200b'), loc='left')
-
-    ax_reduction = fig.add_axes([(width + padding) / fig_width, 0, height / fig_width, 1])
-
     _plot_reduction(
-        ax_reduction,
+        ax,
         reduction,
         [
             QuiverBatch(
@@ -310,7 +324,7 @@ def _plot_atoms_and_reduction_slider_figure(
         ],
     )
 
-    ax_reduction.plot(transformed_vectors[: index + 1, 0], transformed_vectors[: index + 1, 1], c='k', lw=0.8, ls=':')
+    ax.plot(transformed_vectors[: index + 1, 0], transformed_vectors[: index + 1, 1], c='k', lw=0.8, ls=':')
 
     buf = io.BytesIO()
     fig.savefig(buf, format='png', bbox_inches='tight')
@@ -342,13 +356,19 @@ def plot_atoms_and_reduction_slider(
     height = 4.0
     width = height * aspect
 
-    bufs = process_map(
-        _plot_atoms_and_reduction_slider_figure,
+    atoms_bufs = match_prerendered_slider(atoms_list) or process_map(
+        _plot_atoms_slider_figure,
+        atoms_list,
+        *repeat_args(width, height, limits, darken_threshold),
+        desc='Preparing visualization',
+        leave=False,
+    )
+
+    reduction_bufs = process_map(
+        _plot_reduction_slider_figure,
         atoms_list,
         range(len(atoms_list)),
-        *repeat_args(
-            width, height, limits, darken_threshold, reduction, transformed_vectors, reference_vectors, reference_labels
-        ),
+        *repeat_args(height, reduction, transformed_vectors, reference_vectors, reference_labels),
         desc='Preparing visualization',
         leave=False,
     )
@@ -356,15 +376,20 @@ def plot_atoms_and_reduction_slider(
     labels = [atoms.info.get('label') for atoms in atoms_list]
     options = [(f'{i} ({label})' if label else f'{i}', i) for i, label in enumerate(labels)]
 
-    slider = ipywidgets.SelectionSlider(options=options, value=0, description='Image index:')
-    image = ipywidgets.Image(format='png')
+    slider = ipywidgets.SelectionSlider(
+        options=options, value=0, description='Image index:', layout=ipywidgets.Layout(width='400px')
+    )
+    atoms_image = ipywidgets.Image(format='png')
+    reduction_image = ipywidgets.Image(format='png')
+    images = ipywidgets.HBox([atoms_image, reduction_image], layout=ipywidgets.Layout(align_items='center'))
 
     def render(_=None):
-        image.value = bufs[slider.value].getvalue()
+        atoms_image.value = atoms_bufs[slider.value].getvalue()
+        reduction_image.value = reduction_bufs[slider.value].getvalue()
 
     slider.observe(render, names='value')
     render()
-    display(slider, image)
+    display(slider, images)
 
 
 def plot_parity(ax: Axes, targets: np.ndarray, predictions: np.ndarray, title: str = ''):

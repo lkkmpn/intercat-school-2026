@@ -49,6 +49,10 @@ conflicts = [
     [
         { extra = "modeling" },
         { group = "internal" },
+    ],
+    [
+        { extra = "all" },
+        { group = "internal" },
     ]
 ]
 

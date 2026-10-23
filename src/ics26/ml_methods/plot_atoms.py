@@ -1,43 +1,18 @@
-import io
 import itertools
 import warnings
-from functools import cache
-from pathlib import Path
 from typing import Any
 
 import ase.data
 import ase.data.colors
-import ipywidgets
-import matplotlib.pyplot as plt
 import numpy as np
 from ase.atoms import Atoms
-from ase.io import read
 from colorspacious import cspace_convert
-from IPython.display import display
 from matplotlib.axes import Axes
-from matplotlib.backends.backend_agg import FigureCanvasAgg
 from matplotlib.collections import PatchCollection
-from matplotlib.figure import Figure
 from matplotlib.patches import Circle
-from mpl_toolkits.axes_grid1.axes_grid import ImageGrid
-from mplpp.atoms import get_atoms_limits, plane_to_indices, plot_cell
+from mplpp.atoms import get_atoms_limits, plane_to_indices
 from mplpp.limits import Limits
 from mplpp.utils import disable_ticks
-from tqdm.contrib.concurrent import process_map
-
-
-@cache
-def _get_span() -> tuple[float, float]:
-    atoms = read(Path(__file__).parent.parent.parent / 'files/gold_stepped.traj')
-    limits = get_atoms_limits(atoms, plane='xy', radius_factor=1.0)
-    limits.add_margin(0.25)
-    span = max(limits.get_width(), limits.get_height())
-    return (span, span)
-
-
-def _get_limits_xy(atoms: Atoms) -> Limits:
-    span = _get_span()
-    return Limits.from_center(get_atoms_limits(atoms, plane='xy', radius_factor=1.0).get_center(), span, span)
 
 
 def _plot_atoms(
@@ -202,132 +177,3 @@ def desaturate_cheap(rgb, amount=0.5):
     rgb = np.asarray(rgb, dtype=float)
     gray = rgb @ np.array([0.2126, 0.7152, 0.0722])  # luminance (approx., in sRGB)
     return gray[..., None] + (rgb - gray[..., None]) * (1 - amount)
-
-
-def plot_atoms(
-    atoms_list: Atoms | list[Atoms],
-    *,
-    plane: str = 'xy',
-    darken_threshold_symbol: str = 'Au',
-):
-    if isinstance(atoms_list, Atoms):
-        atoms_list = [atoms_list]
-
-    atoms = atoms_list[0]  # assumed that all are same surface
-
-    if plane == 'xy':
-        darken = True
-        darken_threshold = np.max(atoms.positions[atoms.symbols == darken_threshold_symbol, 2])
-        darken_factor = 0.2
-    else:
-        darken = False
-        darken_threshold = np.nan
-        darken_factor = 0.0
-
-    if plane == 'xy':
-        limits = _get_limits_xy()
-    else:
-        limits = get_atoms_limits(atoms, plane=plane, radius_factor=1.0)
-        limits.add_margin(0.25)
-
-    aspect = limits.get_width() / limits.get_height()
-
-    height = 5.0
-    axes_pad = 0.1
-    width = height * aspect * len(atoms_list) + axes_pad * (len(atoms_list) - 1)
-
-    fig = plt.figure(figsize=(width, height))
-    grid = ImageGrid(fig, 111, (1, len(atoms_list)), axes_pad=axes_pad, aspect=True)
-
-    for ax, atoms in zip(grid, atoms_list, strict=True):
-        _plot_atoms(
-            ax,
-            atoms,
-            plane=plane,
-            radius_factor=1.0,
-            patch_limits=limits,
-            repeat=True,
-            repeat_patch_kwargs={'ls': ':'},
-            darken=darken,
-            darken_threshold=darken_threshold,
-            darken_factor=darken_factor,
-            repeat_desaturate=0.8,
-        )
-
-        plot_cell(ax, atoms.cell, plane=plane, collection_kwargs={'edgecolors': 'C3'})
-
-        limits.apply_to_axes(ax)
-
-        if atoms.info.get('label'):
-            ax.set_title(atoms.info.get('label'), loc='left')
-
-
-def _plot_slider_figure(atoms: Atoms, width: float, height: float, limits: Limits, darken_threshold: float):
-    fig = Figure(figsize=(width, height))
-    FigureCanvasAgg(fig)
-
-    ax = fig.subplots()
-
-    _plot_atoms(
-        ax,
-        atoms,
-        plane='xy',
-        radius_factor=1.0,
-        patch_limits=limits,
-        limits_indices=False,
-        repeat=True,
-        repeat_patch_kwargs={'ls': ':'},
-        darken=True,
-        darken_threshold=darken_threshold,
-        darken_factor=0.2,
-        repeat_desaturate=0.8,
-    )
-
-    plot_cell(ax, atoms.cell, plane='xy', collection_kwargs={'edgecolors': 'C3'})
-
-    limits.apply_to_axes(ax)
-
-    ax.set_title(atoms.info.get('label', '\u200b'), loc='left')
-
-    buf = io.BytesIO()
-    fig.savefig(buf, format='png', bbox_inches='tight')
-
-    return buf
-
-
-def plot_atoms_slider(atoms_list: list[Atoms]):
-    atoms = atoms_list[0]  # assumed that all are same surface
-
-    darken_threshold = np.max(atoms.positions[atoms.symbols == 'Au', 2])
-
-    limits = _get_limits_xy()
-
-    aspect = limits.get_width() / limits.get_height()
-
-    height = 5.0
-    width = height * aspect
-
-    bufs = process_map(
-        _plot_slider_figure,
-        atoms_list,
-        *_repeat(width, height, limits, darken_threshold),
-        desc='Preparing visualization',
-        leave=False,
-    )
-
-    labels = [atoms.info.get('label') for atoms in atoms_list]
-    options = [(f'{i} ({label})' if label else f'{i}', i) for i, label in enumerate(labels)]
-
-    slider = ipywidgets.SelectionSlider(options=options, value=0, description='Image index:')
-    image = ipywidgets.Image(format='png')
-
-    def render(_=None):
-        image.value = bufs[slider.value].getvalue()
-
-    slider.observe(render, names='value')
-    render()
-    display(slider, image)
-
-
-def _repeat(*args):
-    return (itertools.repeat(arg) for arg in args)

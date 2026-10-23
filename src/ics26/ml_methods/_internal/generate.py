@@ -10,7 +10,7 @@ from ase.calculators.calculator import Calculator
 from ase.calculators.singlepoint import SinglePointCalculator
 from ase.constraints.fix_atoms import FixAtoms
 from ase.geometry import get_distances
-from ase.io import write
+from ase.io import read, write
 from ase.mep.neb import NEB
 from ase.optimize.bfgs import BFGS
 from ase.optimize.mdmin import MDMin
@@ -22,7 +22,9 @@ from scipy.spatial.distance import squareform
 from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
+from ics26.ml_methods import setup_matplotlib
 from ics26.ml_methods._internal.mlip import get_uma_calculator
+from ics26.ml_methods._internal.prerender import prerender_slider
 from ics26.ml_methods.gpr import SGPR, SOAPGPRCalculator
 
 ROOT_PATH = Path(__file__).parent.parent.parent.parent.parent / 'files/ml-data'
@@ -362,6 +364,8 @@ def append_image(opt: Optimizer, lst: list[Atoms]) -> None:
 
 
 def main():
+    setup_matplotlib()
+
     ROOT_PATH.mkdir(parents=True, exist_ok=True)
 
     write(ROOT_PATH / 'gold_stepped.traj', generate_gold_stepped())
@@ -369,6 +373,16 @@ def main():
 
     write(ROOT_PATH / 'gold_kinked.traj', generate_gold_kinked())
     generate_kinked_training_data()
+
+    prerender_slider(
+        read(ROOT_PATH / 'gold_stepped_hydrogen_x_diffusion.traj', index=':'),
+        'gold_stepped_hydrogen_x_diffusion.tar.xz',
+    )
+
+    prerender_slider(
+        sorted(read(ROOT_PATH / 'training_data.traj', index=':'), key=lambda atoms: atoms.get_potential_energy()),
+        'training_data.tar.xz',
+    )
 
     with tarfile.open(ROOT_PATH.parent / 'ml-data.tar.gz', 'w:gz') as tar:
         for path in ROOT_PATH.iterdir():
