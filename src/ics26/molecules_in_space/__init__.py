@@ -29,7 +29,7 @@ def plot_abundances(
         ax.plot(times, abundances[:, species_index], c=f'C{i}', label=species)
 
         # plot reference abundance as dotted line
-        if reference_abundances and species in reference_abundances:
+        if reference_abundances and species in reference_abundances and reference_abundances[species] is not Ellipsis:
             ax.axhline(reference_abundances[species], c=f'C{i}', ls=':')
 
     ax.set_xscale('log')
