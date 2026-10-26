@@ -1,13 +1,14 @@
 import timeit
 
 from ase.atoms import Atoms
+from ase.calculators.calculator import all_properties
 from ase.calculators.singlepoint import SinglePointCalculator
 
 
 def copy_atoms(atoms: Atoms) -> Atoms:
     a = atoms.copy()
     if atoms.calc is not None:
-        a.calc = SinglePointCalculator(a, **atoms.calc.results)
+        a.calc = SinglePointCalculator(a, **{k: v for k, v in atoms.calc.results.items() if k in all_properties})
     return a
 
 

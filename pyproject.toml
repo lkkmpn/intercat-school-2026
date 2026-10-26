@@ -27,9 +27,11 @@ ml-methods = [
 ]
 modeling = [
     "ase>=3.29.0",
+    "chemdiagrams>=0.5.6",
     "ipykernel>=6.17.1",
     "ipywidgets>=7.7.1",
     "mace-torch>=0.3.16",
+    "matplotlib-plus-plus>=0.0.1",
     "scipy>=1.16.3",
     "sella>=2.6.0",
     "torch>=2.8.0",

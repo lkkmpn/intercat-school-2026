@@ -715,6 +715,21 @@ wheels = [
 ]
 
 [[package]]
+name = "chemdiagrams"
+version = "0.5.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "matplotlib" },
+    { name = "numpy" },
+    { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-all') or (python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version < '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+    { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-all') or (python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version >= '3.12' and extra != 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a1/36/f79f34d84e922cfd2a9e55b2bd6f91628eef52c65f8999412b0f92c86c98/chemdiagrams-0.5.6.tar.gz", hash = "sha256:83909537c9eac0effc3611e5243869e412649479246fed68b9b296caf37338d9", size = 61274, upload-time = "2026-07-11T09:26:13.355Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7f/8c/0798b9768929f203f09d2b91e7958b07f3fe218af22748ac984a89605d15/chemdiagrams-0.5.6-py3-none-any.whl", hash = "sha256:8f68e1409bfffa1f03ded64e5eb015cac3c089b87d17f3d3ec3c0c19f343fa29", size = 51201, upload-time = "2026-07-11T09:26:11.96Z" },
+]
+
+[[package]]
 name = "click"
 version = "8.5.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1846,6 +1861,7 @@ dependencies = [
 [package.optional-dependencies]
 all = [
     { name = "ase" },
+    { name = "chemdiagrams" },
     { name = "colorspacious" },
     { name = "dscribe" },
     { name = "ipykernel" },
@@ -1874,9 +1890,11 @@ ml-methods = [
 ]
 modeling = [
     { name = "ase" },
+    { name = "chemdiagrams" },
     { name = "ipykernel" },
     { name = "ipywidgets" },
     { name = "mace-torch" },
+    { name = "matplotlib-plus-plus" },
     { name = "scipy", version = "1.17.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version >= '3.12' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (extra != 'extra-5-ics26-all' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "scipy", version = "1.18.1", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version >= '3.12' and extra == 'extra-5-ics26-modeling') or (python_full_version < '3.12' and extra == 'extra-5-ics26-all' and extra == 'group-5-ics26-internal') or (extra != 'extra-5-ics26-all' and extra == 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal') or (extra == 'extra-5-ics26-all' and extra != 'extra-5-ics26-modeling' and extra == 'group-5-ics26-internal')" },
     { name = "sella" },
@@ -1894,6 +1912,7 @@ internal = [
 requires-dist = [
     { name = "ase", marker = "extra == 'ml-methods'", specifier = ">=3.29.0" },
     { name = "ase", marker = "extra == 'modeling'", specifier = ">=3.29.0" },
+    { name = "chemdiagrams", marker = "extra == 'modeling'", specifier = ">=0.5.6" },
     { name = "colorspacious", marker = "extra == 'ml-methods'", specifier = ">=1.1.2" },
     { name = "dscribe", marker = "extra == 'ml-methods'", specifier = ">=2.1.2" },
     { name = "ics26", extras = ["ml-methods", "modeling"], marker = "extra == 'all'" },
@@ -1904,6 +1923,7 @@ requires-dist = [
     { name = "mace-torch", marker = "extra == 'modeling'", specifier = ">=0.3.16" },
     { name = "matplotlib", specifier = ">=3.10.0" },
     { name = "matplotlib-plus-plus", marker = "extra == 'ml-methods'", git = "https://gitlab.com/lkkmpn/mplpp.git" },
+    { name = "matplotlib-plus-plus", marker = "extra == 'modeling'", git = "https://gitlab.com/lkkmpn/mplpp.git" },
     { name = "numpy", specifier = ">=2.1.3" },
     { name = "scikit-learn", marker = "extra == 'ml-methods'", specifier = ">=1.6.1" },
     { name = "scipy", marker = "extra == 'ml-methods'", specifier = ">=1.16.3" },
